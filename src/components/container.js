@@ -9,7 +9,7 @@ const Container = ({ children, as = "div", size = "max", align }) => {
         maxWidth: `var(--size-${size}-width)`,
         width: "100%",
         margin: "0 auto",
-        padding: "var(--space-2xl) var(--size-gutter)",
+        padding: "var(--size-gutter-vertical) var(--size-gutter)",
         ...(align && {
           textAlign: align,
         }),

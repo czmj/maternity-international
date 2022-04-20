@@ -23,6 +23,7 @@
   --space-xl: 20px;
   --space-2xl: 24px;
   --space-3xl: 48px;
+  --space-4xl: 60px;
 
   /* line-height */
   --solid: 1;
@@ -69,6 +70,7 @@
 
   /* size */
   --size-gutter: var(--space-2xl);
+  --size-gutter-vertical: var(--space-2xl);
   --size-logo: var(--space-2xl);
   --size-max-width: 100rem;
   --size-half-width: 50rem;
@@ -77,6 +79,7 @@
 @media (min-width: 480px) {
   :root {
     --size-gutter: var(--space-3xl);
+    --size-gutter-vertical: var(--space-4xl);
   }
 }
 

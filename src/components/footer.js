@@ -4,12 +4,12 @@ import Container from "./container"
 import * as styles from "./footer.module.css"
 
 const Footer = () => (
-  <Container as="footer">
-    <div className={styles.container}>
+  <div className={styles.footer}>
+    <Container as="footer">
       Built by Lyra Pallotti and{" "}
       <a href="https://github.com/czmj">Clara Jordan</a>
-    </div>
-  </Container>
+    </Container>
+  </div>
 )
 
 export default Footer
