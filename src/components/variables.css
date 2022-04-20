@@ -27,8 +27,8 @@
   /* line-height */
   --solid: 1;
   --dense: 1.25;
-  --default: 1.5;
-  --loose: 1.75;
+  --default: 1.8;
+  --loose: 2;
 
   /* font-weight */
   --body: 400;
@@ -70,6 +70,7 @@
   --size-gutter: var(--space-2xl);
   --size-logo: var(--space-2xl);
   --size-max-width: 80rem;
+  --size-half-width: 40rem;
 }
 
 @media (min-width: 480px) {

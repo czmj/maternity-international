@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import get from "lodash/get"
 
 import Layout from "../components/layout"
-import Container from "../components/container"
+import Bio from "../components/bio"
 
 class RootIndex extends React.Component {
   render() {
@@ -11,9 +11,11 @@ class RootIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <Container>
-          <p>Hello {person.name}</p>
-        </Container>
+        <Bio
+          image={person.profileImage.gatsbyImageData}
+          title={person.name}
+          content={person.bio.childMarkdownRemark.html}
+        />
       </Layout>
     )
   }
@@ -25,17 +27,14 @@ export const pageQuery = graphql`
   query HomeQuery {
     allContentfulPerson {
       nodes {
-        bio {
-          raw
-        }
         name
+        bio {
+          childMarkdownRemark {
+            html
+          }
+        }
         profileImage {
-          gatsbyImageData(
-            aspectRatio: 1
-            width: 500
-            placeholder: BLURRED
-            cropFocus: FACE
-          )
+          gatsbyImageData(aspectRatio: 1, width: 350, placeholder: BLURRED)
         }
       }
     }

@@ -1,0 +1,11 @@
+.image {
+  border-radius: 100%;
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  margin-bottom: var(--size-gutter);
+}
+
+.image img {
+  mix-blend-mode: screen;
+  filter: grayscale(100%);
+}

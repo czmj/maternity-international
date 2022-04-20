@@ -28,7 +28,8 @@ body {
   background: var(--background);
   color: var(--text-color);
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: var(--text-prose);
+  letter-spacing: var(--text-prose-tracking);
   font-weight: var(--body);
   line-height: var(--default);
   margin: 0;

@@ -1,16 +1,21 @@
 import React from "react"
 
-const Container = ({ children, as = "div" }) => {
+const Container = ({ children, as = "div", size = "max", align }) => {
+  const Tag = as
+
   return (
-    <div
+    <Tag
       style={{
-        maxWidth: "var(--size-max-width)",
+        maxWidth: `var(--size-${size}-width)`,
         margin: "0 auto",
         padding: "var(--space-2xl) var(--size-gutter)",
+        ...(align && {
+          textAlign: align,
+        }),
       }}
     >
       {children}
-    </div>
+    </Tag>
   )
 }
 
