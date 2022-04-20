@@ -1,0 +1,28 @@
+.hero {
+  background: var(--primary);
+  margin-bottom: var(--size-gutter);
+}
+
+.background {
+  align-items: center;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  filter: grayscale(100%);
+  min-height: 70vh;
+  mix-blend-mode: screen;
+  justify-content: flex-start;
+}
+
+.inner {
+  color: var(--white);
+  max-width: var(--size-half-width);
+}
+
+.title {
+  font-size: var(--text-title);
+}
+
+.subheading {
+  margin-bottom: var(--size-gutter);
+}

@@ -7,6 +7,7 @@ const Container = ({ children, as = "div", size = "max", align }) => {
     <Tag
       style={{
         maxWidth: `var(--size-${size}-width)`,
+        width: "100%",
         margin: "0 auto",
         padding: "var(--space-2xl) var(--size-gutter)",
         ...(align && {

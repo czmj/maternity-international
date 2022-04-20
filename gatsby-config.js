@@ -37,7 +37,7 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     title: "Maternity International",
-    description: "Effective, collaborative research for change",
+    description: "Effective, Collaborative Research for Change",
   },
   plugins: [
     "gatsby-transformer-remark",

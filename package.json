@@ -21,6 +21,7 @@
     "gatsby-source-contentful": "^7.10.1",
     "gatsby-transformer-remark": "^5.12.1",
     "gatsby-transformer-sharp": "^4.12.1",
+    "is-absolute-url": "^4.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0"

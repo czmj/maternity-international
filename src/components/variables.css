@@ -63,15 +63,15 @@
   /* size */
   --text-lead: var(--text-lg);
   --text-prose: var(--text-md);
-  --text-title: var(--text-3xl);
+  --text-title: var(--text-4xl);
   /* tracking */
   --text-prose-tracking: -0.011em;
 
   /* size */
   --size-gutter: var(--space-2xl);
   --size-logo: var(--space-2xl);
-  --size-max-width: 80rem;
-  --size-half-width: 40rem;
+  --size-max-width: 100rem;
+  --size-half-width: 50rem;
 }
 
 @media (min-width: 480px) {
@@ -83,7 +83,7 @@
 @media (min-width: 768px) {
   :root {
     --text-lead: var(--text-2xl);
-    --text-title: var(--text-4xl);
+    --text-title: var(--text-5xl);
     --text-prose-tracking: -0.014em;
     --text-prose: var(--text-lg);
   }
