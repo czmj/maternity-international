@@ -6,4 +6,5 @@
   font-weight: 700;
   border: 1px solid;
   color: currentColor;
+  font-size: var(--text-button);
 }

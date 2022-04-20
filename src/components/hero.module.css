@@ -1,6 +1,5 @@
 .hero {
   background: var(--primary);
-  margin-bottom: var(--size-gutter);
 }
 
 .background {

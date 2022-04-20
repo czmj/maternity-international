@@ -1,0 +1,33 @@
+.container {
+    background: var(--light-grey);
+}
+
+.title {
+    font-size: var(--text-lead);
+    margin-bottom: var(--size-gutter);
+}
+
+.button {
+    text-align: center;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: var(--size-gutter);
+    list-style: none;
+    margin: 0 auto var(--size-gutter-vertical);
+    padding: 0;
+}
+
+@media (min-width: 768px) {
+    .list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1400px) {
+    .list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

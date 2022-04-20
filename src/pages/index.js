@@ -5,11 +5,13 @@ import get from "lodash/get"
 import Layout from "../components/layout"
 import Bio from "../components/bio"
 import Hero from "../components/hero"
+import ServicesPreview from "../sections/services-preview"
 
 class RootIndex extends React.Component {
   render() {
     const site = get(this, "props.data.site")
     const [person] = get(this, "props.data.allContentfulPerson.nodes")
+    const services = get(this, "props.data.allContentfulService.nodes")
 
     return (
       <Layout location={this.props.location}>
@@ -22,6 +24,7 @@ class RootIndex extends React.Component {
             href: "/contact/",
           }}
         />
+        <ServicesPreview services={services} />
         <Bio
           image={person.profileImage.gatsbyImageData}
           title={person.name}
@@ -52,6 +55,26 @@ export const pageQuery = graphql`
         profileImage {
           gatsbyImageData(aspectRatio: 1, width: 350, placeholder: BLURRED)
         }
+      }
+    }
+    allContentfulTestimonial {
+      nodes {
+        author
+        jobTitle
+        review {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
+    }
+    allContentfulService(limit: 4) {
+      nodes {
+        name
+        icon
+        slug
+        shortDescription
+        order
       }
     }
   }
