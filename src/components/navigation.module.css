@@ -21,7 +21,7 @@
 }
 
 .navigationItem a {
-  border-bottom: 1.5px solid transparent;
+  border-bottom: 2px dotted transparent;
   color: currentColor;
   text-decoration: none;
 }
@@ -29,6 +29,7 @@
 .navigationItem a:hover {
   border-bottom-color: var(--primary);
   color: var(--primary);
+  opacity: 1;
 }
 
 .logoLink {
@@ -38,6 +39,12 @@
   flex-direction: row;
   flex-shrink: 0;
   gap: var(--space-md);
+  border: none;
+  color: currentColor;
+}
+
+.logoLink:hover {
+  opacity: 1;
 }
 
 @media (max-width: 767px) {

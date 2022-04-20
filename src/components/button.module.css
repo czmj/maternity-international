@@ -5,10 +5,5 @@
   text-decoration: none;
   font-weight: 700;
   border: 1px solid;
-  transition: all 100ms;
-}
-
-.button:hover {
-  color: inherit;
-  opacity: 0.5;
+  color: currentColor;
 }

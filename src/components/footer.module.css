@@ -5,13 +5,3 @@
   padding: var(--space-2xl) 0;
   text-align: right;
 }
-
-.container a {
-  border-bottom: 1.5px solid transparent;
-  font-weight: var(--medium);
-}
-
-.container a:hover {
-  border-bottom-color: var(--primary);
-  color: var(--primary);
-}
