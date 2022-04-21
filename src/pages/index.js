@@ -10,7 +10,7 @@ import ServicesPreview from "../sections/services-preview"
 class RootIndex extends React.Component {
   render() {
     const site = get(this, "props.data.site")
-    const [person] = get(this, "props.data.allContentfulPerson.nodes")
+    const person = get(this, "props.data.contentfulPerson")
     const services = get(this, "props.data.allContentfulService.nodes")
     const [testimonial] = get(this, "props.data.allContentfulTestimonial.nodes")
 
@@ -50,17 +50,15 @@ export const pageQuery = graphql`
         description
       }
     }
-    allContentfulPerson {
-      nodes {
-        name
-        bio {
-          childMarkdownRemark {
-            html
-          }
+    contentfulPerson(name: { glob: "*Phoebe Pallotti" }) {
+      name
+      bio {
+        childMarkdownRemark {
+          html
         }
-        profileImage {
-          gatsbyImageData(aspectRatio: 1, width: 350, placeholder: BLURRED)
-        }
+      }
+      profileImage {
+        gatsbyImageData(aspectRatio: 1, width: 350, placeholder: BLURRED)
       }
     }
     allContentfulTestimonial {
