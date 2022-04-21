@@ -1,10 +1,10 @@
-import React from "react"
 import { graphql } from "gatsby"
 import get from "lodash/get"
-
-import Layout from "../components/layout"
+import React from "react"
 import Bio from "../components/bio"
 import Hero from "../components/hero"
+import Layout from "../components/layout"
+import Testimonial from "../components/testimonial"
 import ServicesPreview from "../sections/services-preview"
 
 class RootIndex extends React.Component {
@@ -12,6 +12,7 @@ class RootIndex extends React.Component {
     const site = get(this, "props.data.site")
     const [person] = get(this, "props.data.allContentfulPerson.nodes")
     const services = get(this, "props.data.allContentfulService.nodes")
+    const [testimonial] = get(this, "props.data.allContentfulTestimonial.nodes")
 
     return (
       <Layout location={this.props.location}>
@@ -29,6 +30,11 @@ class RootIndex extends React.Component {
           image={person.profileImage.gatsbyImageData}
           title={person.name}
           content={person.bio.childMarkdownRemark.html}
+        />
+        <Testimonial
+          author={testimonial.author}
+          jobTitle={testimonial.jobTitle}
+          content={testimonial.review.childMarkdownRemark.html}
         />
       </Layout>
     )

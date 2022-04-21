@@ -1,0 +1,30 @@
+.container {
+    background: var(--light-grey);
+}
+
+.content {
+    font-size: var(--text-2xl);
+    position: relative;
+}
+
+.cite {
+    font-size: var(--text-lg);
+    margin-top: var(--size-gutter-vertical);
+    font-weight: var(--bold);
+}
+
+@media (min-width: 768px) {
+    .content {
+        padding-left: 150px;
+    }
+    .content::before {
+        content: open-quote;
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 200px;
+        font-weight: bold;
+        line-height: 0.8;
+        color: var(--black-fade-5);
+    }
+}
