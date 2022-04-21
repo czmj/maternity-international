@@ -1,7 +1,5 @@
+import { graphql, Link, useStaticQuery } from "gatsby"
 import React from "react"
-import { Link } from "gatsby"
-import { useStaticQuery, graphql } from "gatsby"
-
 import * as styles from "./navigation.module.css"
 
 const Navigation = () => {

@@ -2,7 +2,6 @@ import React from "react"
 import Button from "../components/button"
 import Container from "../components/container"
 import Tile from "../components/tile"
-
 import * as styles from "./services-preview.module.css"
 
 const ServicesPreview = ({ services }) => {

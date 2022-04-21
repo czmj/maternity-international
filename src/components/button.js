@@ -1,6 +1,6 @@
-import * as React from "react"
 import { Link } from "gatsby"
 import isAbsoluteURL from "is-absolute-url"
+import * as React from "react"
 import * as styles from "./button.module.css"
 
 const Button = ({ href, text, children }) => {

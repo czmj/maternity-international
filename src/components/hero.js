@@ -1,7 +1,6 @@
 import React from "react"
 import Button from "./button"
 import Container from "./container"
-
 import * as styles from "./hero.module.css"
 
 const Hero = ({ image, title, subheading, button }) => (

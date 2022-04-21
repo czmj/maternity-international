@@ -1,6 +1,5 @@
 import React from "react"
 import Container from "./container"
-
 import * as styles from "./testimonial.module.css"
 
 const Testimonial = ({ author, jobTitle, content }) => {
