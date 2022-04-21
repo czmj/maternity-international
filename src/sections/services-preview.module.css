@@ -3,7 +3,7 @@
 }
 
 .title {
-    font-size: var(--text-lead);
+    font-size: var(--text-subtitle);
     margin-bottom: var(--size-gutter);
 }
 

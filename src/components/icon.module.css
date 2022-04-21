@@ -1,0 +1,29 @@
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.secondary {
+  color: var(--secondary);
+}
+
+.large {
+  color: var(--secondary);
+  font-size: var(--text-4xl);
+  padding: var(--space-lg);
+  position: relative;
+  margin-bottom: var(--size-gutter);
+}
+
+.large::before {
+  content: '';
+  background: currentColor;
+  border-radius: var(--radius-md);
+  height: 100%;
+  left: 0;
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

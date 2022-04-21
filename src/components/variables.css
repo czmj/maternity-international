@@ -26,6 +26,8 @@
   --space-2xl: 36px;
   --space-3xl: 48px;
   --space-4xl: 60px;
+  --space-5xl: 72px;
+  --space-6xl: 90px;
 
   /* line-height */
   --solid: 1;
@@ -64,7 +66,8 @@
   --text-color: var(--black);
   /* size */
   --text-prose: var(--text-md);
-  --text-lead: var(--text-2xl);
+  --text-lead: var(--text-lg);
+  --text-subtitle: var(--text-2xl);
   --text-title: var(--text-4xl);
   --text-button: var(--text-lg);
   /* tracking */
@@ -90,7 +93,8 @@
 
 @media (min-width: 768px) {
   :root {
-    --text-lead: var(--text-3xl);
+    --text-lead: var(--text-xl);
+    --text-subtitle: var(--text-3xl);
     --text-title: var(--text-5xl);
     --text-prose-tracking: -0.014em;
     --text-prose: var(--text-lg);
