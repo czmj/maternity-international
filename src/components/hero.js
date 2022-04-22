@@ -1,6 +1,7 @@
 import React from "react"
 import Button from "./button"
 import Container from "./container"
+import { AnimationOnScroll } from "react-animation-on-scroll"
 import * as styles from "./hero.module.css"
 
 const Hero = ({ image, title, subheading, button }) => (
@@ -13,9 +14,11 @@ const Hero = ({ image, title, subheading, button }) => (
     >
       <Container>
         <div className={styles.inner}>
-          <h1 className={styles.title}>{title}</h1>
-          {subheading && <p className={styles.subheading}>{subheading}</p>}
-          {button && <Button text={button.text} href={button.href} />}
+          <AnimationOnScroll animateIn="animate__fadeInLeft" animateOnce>
+            <h1 className={styles.title}>{title}</h1>
+            {subheading && <p className={styles.subheading}>{subheading}</p>}
+            {button && <Button text={button.text} href={button.href} />}
+          </AnimationOnScroll>
         </div>
       </Container>
     </div>

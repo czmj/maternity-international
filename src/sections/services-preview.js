@@ -1,4 +1,5 @@
 import React from "react"
+import { AnimationOnScroll } from "react-animation-on-scroll"
 import Button from "../components/button"
 import Container from "../components/container"
 import Tile from "../components/tile"
@@ -15,21 +16,33 @@ const ServicesPreview = ({ services }) => {
         <ul className={styles.list}>
           {services
             .sort((a, b) => a.order - b.order)
-            .map(service => {
+            .map((service, index) => {
               return (
-                <li key={service.slug}>
-                  <Tile
-                    href={`/services#${service.slug}`}
-                    title={service.name}
-                    description={service.shortDescription}
-                    icon={service.icon}
-                  />
-                </li>
+                <AnimationOnScroll
+                  animateIn="animate__fadeInUp"
+                  delay={100 * index}
+                  animateOnce
+                >
+                  <li key={service.slug} className={styles.listItem}>
+                    <Tile
+                      href={`/services#${service.slug}`}
+                      title={service.name}
+                      description={service.shortDescription}
+                      icon={service.icon}
+                    />
+                  </li>
+                </AnimationOnScroll>
               )
             })}
         </ul>
         <div className={styles.button}>
-          <Button href="/services/">See all services</Button>
+          <AnimationOnScroll
+            animateIn="animate__fadeIn"
+            duration="2"
+            animateOnce
+          >
+            <Button href="/services/">See all services</Button>
+          </AnimationOnScroll>
         </div>
       </Container>
     </section>

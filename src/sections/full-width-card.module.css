@@ -48,6 +48,8 @@
 
   .right .header {
     text-align: left;
+    padding-right: 0;
+    padding-left: var(--size-gutter);
   }
 
   .right .body {

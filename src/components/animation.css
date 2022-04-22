@@ -1,0 +1,80 @@
+:root {
+    --animate-duration: 1s;
+}
+
+.animate__animated {
+    animation-duration: var(--animate-duration);
+    animation-fill-mode: both;
+}
+  
+@media print, (prefers-reduced-motion: reduce) {
+    .animate__animated {
+      animation-duration: 1ms !important;
+      transition-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 20%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translate3d(-20%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translate3d(20%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 1200px) {
+    .animate__fadeInUp {
+        animation-name: fadeInUp;
+    }
+      
+    .animate__fadeInLeft {
+      animation-name: fadeInLeft;
+    }
+      
+    .animate__fadeInRight {
+      animation-name: fadeInRight;
+    }
+      
+    .animate__fadeIn {
+      animation-name: fadeIn;
+    }
+}

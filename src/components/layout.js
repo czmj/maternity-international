@@ -1,4 +1,5 @@
 import React from "react"
+import "./animation.css"
 import Footer from "./footer"
 import "./global.css"
 import Navigation from "./navigation"
