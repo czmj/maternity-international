@@ -114,3 +114,7 @@ figure {
   margin: 0;
   list-style: none;
 }
+
+.light-grey {
+  background: var(--light-grey);
+}
