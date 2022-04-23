@@ -22,7 +22,7 @@ class RootIndex extends React.Component {
           image="https://placekitten.com/1800/900"
           button={{
             text: "Contact us",
-            href: "/contact/",
+            href: "#contact",
           }}
         />
         <ServicesPreview services={services} />

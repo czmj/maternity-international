@@ -43,7 +43,7 @@ const Navigation = () => {
           </Link>
         </li>
         <li className={styles.navigationItem}>
-          <Link to="/contact/" activeClassName="active">
+          <Link to="#contact" activeClassName="active">
             Contact
           </Link>
         </li>
