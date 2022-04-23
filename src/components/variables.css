@@ -76,7 +76,7 @@
   /* size */
   --size-gutter: var(--space-xl);
   --size-gutter-vertical: var(--space-2xl);
-  --size-logo: var(--space-2xl);
+  --size-logo: var(--space-3xl);
   --size-max-width: 100rem;
   --size-half-width: 50rem;
 

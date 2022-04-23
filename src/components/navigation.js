@@ -1,5 +1,6 @@
 import { graphql, Link, useStaticQuery } from "gatsby"
 import React from "react"
+import Logo from "../../static/img/noun-pregnancy-603874.svg"
 import * as styles from "./navigation.module.css"
 
 const Navigation = () => {
@@ -20,7 +21,7 @@ const Navigation = () => {
   return (
     <nav role="navigation" className={styles.container} aria-label="Main">
       <Link to="/" className={styles.logoLink}>
-        <span className={styles.logo} />
+        <img alt="" className={styles.logo} src={Logo} />
         <span className={styles.navigationItem}>
           {defaultTitle || "Maternity International"}
         </span>
