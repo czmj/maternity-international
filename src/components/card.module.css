@@ -1,0 +1,16 @@
+.card {
+    display: block;
+    color: var(--text-color);
+    border: 0;
+    margin-bottom: var(--space-4xl);
+}
+
+.title {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+    font-size: var(--text-subtitle);
+}
+
+.lead {
+    margin: 0;
+}

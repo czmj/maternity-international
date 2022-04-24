@@ -118,3 +118,25 @@ figure {
 .light-grey {
   background: var(--light-grey);
 }
+
+@media (min-width: 780px) {
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--size-gutter);
+  }
+
+  .margin-y {
+    margin: var(--space-2xl) 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .margin-y {
+    margin: var(--space-4xl) 0;
+  }
+}
