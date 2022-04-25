@@ -18,20 +18,20 @@ const ServicesPreview = ({ services }) => {
             .sort((a, b) => a.order - b.order)
             .map((service, index) => {
               return (
-                <AnimationOnScroll
-                  animateIn="animate__fadeInUp"
-                  delay={100 * index}
-                  animateOnce
-                >
-                  <li key={service.slug} className={styles.listItem}>
+                <li key={service.slug} className={styles.listItem}>
+                  <AnimationOnScroll
+                    animateIn="animate__fadeInUp"
+                    delay={100 * index}
+                    animateOnce
+                  >
                     <Tile
                       href={`/services#${service.slug}`}
                       title={service.name}
                       description={service.shortDescription}
                       icon={service.icon}
                     />
-                  </li>
-                </AnimationOnScroll>
+                  </AnimationOnScroll>
+                </li>
               )
             })}
         </ul>

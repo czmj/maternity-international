@@ -20,7 +20,8 @@
     padding: 0;
 }
 
-.listItem {
+.listItem,
+.listItem > div {
     height: 100%;
 }
 
