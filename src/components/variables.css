@@ -1,7 +1,7 @@
 :root {
   /* primitives */
   /* font-family */
-  --font-sans: 'Inter var', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol';
   --font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
@@ -70,8 +70,6 @@
   --text-subtitle: var(--text-2xl);
   --text-title: var(--text-4xl);
   --text-button: var(--text-lg);
-  /* tracking */
-  --text-prose-tracking: -0.011em;
 
   /* size */
   --size-gutter: var(--space-xl);
@@ -96,7 +94,6 @@
     --text-lead: var(--text-xl);
     --text-subtitle: var(--text-3xl);
     --text-title: var(--text-5xl);
-    --text-prose-tracking: -0.014em;
     --text-prose: var(--text-lg);
     --text-button: var(--text-xl);
   }
