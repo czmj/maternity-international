@@ -1,0 +1,54 @@
+.rich-text h1, 
+.rich-text h2, 
+.rich-text h3, 
+.rich-text h4, 
+.rich-text h5, 
+.rich-text h6
+{
+  margin: var(--space-4xl) 0 var(--space-xl);
+}
+
+.rich-text p,
+.rich-text ul,
+.rich-text ol {
+  margin-bottom: var(--size-gutter);
+
+}
+
+.rich-text ul p,
+.rich-text ol p {
+  margin: 0;
+}
+
+.rich-text blockquote {
+  font-size: var(--text-2xl);
+  position: relative;
+  margin-bottom: var(--size-gutter-vertical);
+}
+
+.rich-text hr {
+  margin: var(--size-gutter-vertical) 0;
+  border-color: var(--black-fade-5);
+}
+
+.rich-text__image-wrapper {
+  text-align: center;
+  margin: var(--space-2xl) auto;
+}
+
+@media (min-width: 768px) {
+  .rich-text blockquote {
+      padding-left: 150px;
+      margin: var(--size-gutter-vertical) 0;
+  }
+  .rich-text blockquote::before {
+      content: open-quote;
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 200px;
+      font-weight: bold;
+      line-height: 0.8;
+      color: var(--black-fade-5);
+  }
+}
