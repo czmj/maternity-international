@@ -11,7 +11,7 @@ class PageTemplate extends React.Component {
     const page = get(this.props, "data.contentfulPage")
 
     return (
-      <Layout location={this.props.location}>
+      <Layout location={this.props.location} title={page.title} description={page.leadText.leadText} image={page.heroImage.url}>
         <Hero
           title={page.title}
           image={page.heroImage.url}

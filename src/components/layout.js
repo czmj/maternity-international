@@ -8,11 +8,11 @@ import "./variables.css"
 
 class Template extends React.Component {
   render() {
-    const { children } = this.props
+    const { children, title } = this.props
 
     return (
       <>
-        <Seo />
+        <Seo title={title}/>
         <Navigation />
         <main>{children}</main>
         <Footer />

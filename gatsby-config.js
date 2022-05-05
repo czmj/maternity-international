@@ -38,6 +38,9 @@ module.exports = {
   siteMetadata: {
     title: "Maternity International",
     description: "Effective, Collaborative Research for Change",
+    social: {
+      twitter: '@phoebepallotti'
+    }
   },
   plugins: [
     "gatsby-transformer-remark",

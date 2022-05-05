@@ -12,7 +12,7 @@ class ProjectTemplate extends React.Component {
     const post = get(this.props, "data.contentfulProject")
 
     return (
-      <Layout location={this.props.location}>
+      <Layout location={this.props.location} title={post.title} image={post.heroImage.url}>
         <Hero title={post.title} image={post.heroImage.url} />
         <Container size="75">
           <RichText content={post.content} />

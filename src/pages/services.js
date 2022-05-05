@@ -12,7 +12,7 @@ class ServicesPage extends React.Component {
     const services = get(this, "props.data.allContentfulService.nodes")
 
     return (
-      <Layout location={this.props.location}>
+      <Layout location={this.props.location} title={page.title} description={page.leadText.leadText} image={page.heroImage.url}>
         <Hero
           title={page.title}
           subheading={page.leadText.leadText}

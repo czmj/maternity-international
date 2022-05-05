@@ -15,7 +15,7 @@ class RootIndex extends React.Component {
     const [testimonial] = get(this, "props.data.allContentfulTestimonial.nodes")
 
     return (
-      <Layout location={this.props.location}>
+      <Layout location={this.props.location} title={page.title} description={page.leadText.leadText} image={page.heroImage.url}>
         <Hero
           title={page.title}
           subheading={page.leadText.leadText}
