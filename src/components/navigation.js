@@ -42,7 +42,7 @@ const Navigation = () => {
             Work
           </Link>
         </li>
-        <li className={styles.navigationItem}>
+        <li className={`${styles.navigationItem} ${styles.navigationItemContact}`}>
           <Link to="#contact" activeClassName="active">
             Contact
           </Link>
