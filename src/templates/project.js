@@ -5,6 +5,7 @@ import Container from "../components/container"
 import Hero from "../components/hero"
 import Layout from "../components/layout"
 import RichText from "../components/rich-text"
+import Testimonial from "../components/testimonial"
 
 class ProjectTemplate extends React.Component {
   render() {
@@ -16,6 +17,13 @@ class ProjectTemplate extends React.Component {
         <Container size="75">
           <RichText content={post.content} />
         </Container>
+        {post.testimonial && (
+          <Testimonial
+            author={post.testimonial.author}
+            jobTitle={post.testimonial.jobTitle}
+            content={post.testimonial.review.childMarkdownRemark.html}
+          />
+        )}
       </Layout>
     )
   }
@@ -40,6 +48,15 @@ export const pageQuery = graphql`
             description
             gatsbyImageData(height: 500)
             __typename
+          }
+        }
+      }
+      testimonial {
+        author
+        jobTitle
+        review {
+          childMarkdownRemark {
+            html
           }
         }
       }
