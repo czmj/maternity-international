@@ -6,42 +6,40 @@ import Hero from "../components/hero"
 import Layout from "../components/layout"
 import RichText from "../components/rich-text"
 
-class ProjectTemplate extends React.Component {
+class PageTemplate extends React.Component {
   render() {
-    const post = get(this.props, "data.contentfulProject")
+    const page = get(this.props, "data.contentfulPage")
 
     return (
       <Layout location={this.props.location}>
-        <Hero title={post.title} image={post.heroImage.url} />
+        <Hero
+          title={page.title}
+          image={page.heroImage.url}
+          subheading={page.leadText.leadText}
+        />
         <Container size="75">
-          <RichText content={post.content} />
+          <RichText content={page.content} />
         </Container>
       </Layout>
     )
   }
 }
 
-export default ProjectTemplate
+export default PageTemplate
 
 export const pageQuery = graphql`
-  query ProjectBySlug($slug: String!) {
-    contentfulProject(slug: { eq: $slug }) {
+  query PageBySlug($slug: String!) {
+    contentfulPage(slug: { eq: $slug }) {
       slug
       title
+      leadText {
+        leadText
+      }
       heroImage {
         url
       }
       content {
         raw
-        references {
-          ... on ContentfulAsset {
-            contentful_id
-            title
-            description
-            gatsbyImageData(height: 500)
-            __typename
-          }
-        }
       }
     }
   }
