@@ -9,7 +9,7 @@ import ServicesPreview from "../sections/services-preview"
 
 class RootIndex extends React.Component {
   render() {
-    const site = get(this, "props.data.site")
+    const page = get(this, "props.data.contentfulPage")
     const person = get(this, "props.data.contentfulPerson")
     const services = get(this, "props.data.allContentfulService.nodes")
     const [testimonial] = get(this, "props.data.allContentfulTestimonial.nodes")
@@ -17,9 +17,9 @@ class RootIndex extends React.Component {
     return (
       <Layout location={this.props.location}>
         <Hero
-          title={site.siteMetadata.description}
-          subheading="Burrow under covers stinky cat, yet i dreamt about fish yum!. Bleghbleghvomit my furball really tie the room together scratch, and refuse to drink water except out of someone's glass massacre a bird in the living room and then look like the cutest and most innocent animal on the planet"
-          image="https://placekitten.com/1800/900"
+          title={page.title}
+          subheading={page.leadText.leadText}
+          image={page.heroImage.url}
           button={{
             text: "Contact us",
             href: "#contact",
@@ -45,9 +45,13 @@ export default RootIndex
 
 export const pageQuery = graphql`
   query HomeQuery {
-    site {
-      siteMetadata {
-        description
+    contentfulPage(slug: { eq: "index" }) {
+      title
+      heroImage {
+        url
+      }
+      leadText {
+        leadText
       }
     }
     contentfulPerson(name: { glob: "*Phoebe Pallotti" }) {

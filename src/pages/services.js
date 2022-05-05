@@ -8,14 +8,15 @@ import FullWidthCard from "../sections/full-width-card"
 
 class ServicesPage extends React.Component {
   render() {
+    const page = get(this, "props.data.contentfulPage")
     const services = get(this, "props.data.allContentfulService.nodes")
 
     return (
       <Layout location={this.props.location}>
         <Hero
-          title="Services"
-          subheading="Burrow under covers stinky cat, yet i dreamt about fish yum!. Bleghbleghvomit my furball really tie the room together scratch, and refuse to drink water except out of someone's glass massacre a bird in the living room and then look like the cutest and most innocent animal on the planet"
-          image="https://placekitten.com/1800/900"
+          title={page.title}
+          subheading={page.leadText.leadText}
+          image={page.heroImage.url}
         />
         <ul className="list-unstyled">
           {services
@@ -52,6 +53,15 @@ export default ServicesPage
 
 export const servicesQuery = graphql`
   query ServicesQuery {
+    contentfulPage(slug: { eq: "services" }) {
+      title
+      heroImage {
+        url
+      }
+      leadText {
+        leadText
+      }
+    }
     allContentfulService {
       nodes {
         name

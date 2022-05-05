@@ -10,15 +10,16 @@ import Testimonial from "../components/testimonial"
 
 class WorkPage extends React.Component {
   render() {
+    const page = get(this, "props.data.contentfulPage")
     const projects = get(this, "props.data.allContentfulProject.nodes")
     const [testimonial] = get(this, "props.data.allContentfulTestimonial.nodes")
 
     return (
       <Layout location={this.props.location}>
         <Hero
-          title="Work"
-          subheading="Burrow under covers stinky cat, yet i dreamt about fish yum!. Bleghbleghvomit my furball really tie the room together scratch, and refuse to drink water except out of someone's glass massacre a bird in the living room and then look like the cutest and most innocent animal on the planet"
-          image="https://placekitten.com/1800/900"
+          title={page.title}
+          subheading={page.leadText.leadText}
+          image={page.heroImage.url}
         />
         <Container>
           <ul className="list-unstyled columns margin-y">
@@ -52,6 +53,15 @@ export default WorkPage
 
 export const servicesQuery = graphql`
   query WorkQuery {
+    contentfulPage(slug: { eq: "work" }) {
+      title
+      heroImage {
+        url
+      }
+      leadText {
+        leadText
+      }
+    }
     allContentfulTestimonial {
       nodes {
         author

@@ -1,4 +1,5 @@
 const path = require("path")
+const fs = require("fs")
 
 const getGraphQlData = async ({ type, graphql, reporter }) => {
   const contentfulType = `allContentful${type}`
@@ -47,14 +48,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   if (pages.length > 0) {
+    const definedPages = fs
+      .readdirSync(path.resolve("./src/pages/"))
+      .map(page => page.split(".js")[0])
+
     pages.forEach(page => {
-      createPage({
-        path: `/${page.slug}/`,
-        component: pageTemplate,
-        context: {
-          slug: page.slug,
-        },
-      })
+      if (!definedPages.includes(page.slug)) {
+        createPage({
+          path: `/${page.slug}/`,
+          component: pageTemplate,
+          context: {
+            slug: page.slug,
+          },
+        })
+      }
     })
   }
 }
