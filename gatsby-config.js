@@ -37,7 +37,7 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     title: "Maternity International",
-    description: "Effective, Collaborative Research for Change",
+    description: "Maternal and Neonatal International Health Consultancy and Research",
     social: {
       twitter: '@phoebepallotti'
     }
