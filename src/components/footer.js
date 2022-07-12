@@ -48,8 +48,14 @@ const Footer = () => (
           </li>
         </ul>
         <div className={styles.credit}>
-          Built by Lyra Pallotti and{" "}
-          <a href="https://github.com/czmj">Clara Jordan</a>
+          <p>
+            Built by Lyra Pallotti and{" "}
+            <a href="https://github.com/czmj">Clara Jordan</a>
+          </p>
+          <p>
+            Logo by{" "}
+            <a href="https://thenounproject.com/icon/pregnancy-603874/">LAFS</a>
+          </p>
         </div>
       </div>
     </Container>
