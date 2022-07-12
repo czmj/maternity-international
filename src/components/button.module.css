@@ -7,4 +7,5 @@
   border: 1px solid;
   color: currentColor;
   font-size: var(--text-button);
+  line-height: 1.3;
 }

@@ -39,7 +39,7 @@
   flex-direction: row;
   flex-shrink: 0;
   gap: var(--space-md);
-  border: none;
+  text-decoration: none;
   color: currentColor;
   line-height: var(--dense);
   max-width: 200px;

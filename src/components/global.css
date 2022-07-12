@@ -35,8 +35,8 @@ h6 {
 
 a {
   color: var(--primary);
-  text-decoration: none;
-  border-bottom: 2px dotted var(--primary);
+  text-decoration: 2px dotted underline;
+  text-underline-offset: 8px;
   cursor: pointer;
   transition: all var(--transition-duration-s);
 }

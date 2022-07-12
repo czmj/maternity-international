@@ -1,7 +1,7 @@
 .card {
     display: block;
     color: var(--text-color);
-    border: 0;
+    text-decoration: none;
     margin-bottom: var(--space-4xl);
 }
 
