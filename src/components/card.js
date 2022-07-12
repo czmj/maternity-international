@@ -5,7 +5,7 @@ import * as styles from "./card.module.css"
 const Card = ({ href, title, description, image }) => {
   return (
     <a href={href} className={styles.card}>
-      <GatsbyImage alt={title} image={image.gatsbyImageData} />
+      {image && <GatsbyImage alt={title} image={image.gatsbyImageData} />}
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.lead}>{description}</p>
     </a>

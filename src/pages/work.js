@@ -6,20 +6,25 @@ import Card from "../components/card"
 import Container from "../components/container"
 import Hero from "../components/hero"
 import Layout from "../components/layout"
+import RichText from "../components/rich-text"
 import Testimonial from "../components/testimonial"
 
 class WorkPage extends React.Component {
   render() {
     const page = get(this, "props.data.contentfulPage")
     const projects = get(this, "props.data.allContentfulProject.nodes")
-    const [testimonial] = get(this, "props.data.allContentfulTestimonial.nodes")
 
     return (
-      <Layout location={this.props.location} title={page.title} description={page.leadText.leadText} image={page.heroImage.url}>
+      <Layout
+        location={this.props.location}
+        title={page.title}
+        description={page.leadText?.leadText}
+        image={page.heroImage?.url}
+      >
         <Hero
           title={page.title}
-          subheading={page.leadText.leadText}
-          image={page.heroImage.url}
+          subheading={page.leadText?.leadText}
+          image={page.heroImage?.url}
         />
         <Container>
           <ul className="list-unstyled columns margin-y">
@@ -38,12 +43,15 @@ class WorkPage extends React.Component {
               )
             })}
           </ul>
+          {page.content && <RichText content={page.content} />}
         </Container>
-        <Testimonial
-          author={testimonial.author}
-          jobTitle={testimonial.jobTitle}
-          content={testimonial.review.childMarkdownRemark.html}
-        />
+        {page.testimonial && (
+          <Testimonial
+            author={page.testimonial.author}
+            jobTitle={page.testimonial.jobTitle}
+            content={page.testimonial.review.childMarkdownRemark.html}
+          />
+        )}
       </Layout>
     )
   }
@@ -61,9 +69,10 @@ export const servicesQuery = graphql`
       leadText {
         leadText
       }
-    }
-    allContentfulTestimonial {
-      nodes {
+      content {
+        raw
+      }
+      testimonial {
         author
         jobTitle
         review {
