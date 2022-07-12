@@ -12,7 +12,12 @@ class ServicesPage extends React.Component {
     const services = get(this, "props.data.allContentfulService.nodes")
 
     return (
-      <Layout location={this.props.location} title={page.title} description={page.leadText.leadText} image={page.heroImage.url}>
+      <Layout
+        location={this.props.location}
+        title={page.title}
+        description={page.leadText.leadText}
+        image={page.heroImage.url}
+      >
         <Hero
           title={page.title}
           subheading={page.leadText.leadText}
@@ -36,8 +41,6 @@ class ServicesPage extends React.Component {
                       description={
                         service.longDescription.childMarkdownRemark.html
                       }
-                      links={service.link}
-                      media={service.media}
                     />
                   </Container>
                 </li>
@@ -71,17 +74,6 @@ export const servicesQuery = graphql`
           childMarkdownRemark {
             html
           }
-        }
-        link {
-          id
-          text
-          url
-        }
-        media {
-          id
-          title
-          publicUrl
-          mimeType
         }
         order
       }

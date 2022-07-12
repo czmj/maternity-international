@@ -27,7 +27,6 @@ const ServicesPreview = ({ services }) => {
                     <Tile
                       href={`/services#${service.slug}`}
                       title={service.name}
-                      description={service.shortDescription}
                       icon={service.icon}
                     />
                   </AnimationOnScroll>

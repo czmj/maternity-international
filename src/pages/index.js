@@ -85,7 +85,6 @@ export const pageQuery = graphql`
         name
         icon
         slug
-        shortDescription
         order
       }
     }

@@ -7,7 +7,7 @@ const Tile = ({ href, title, description, icon }) => {
     <a href={href} className={styles.tile}>
       <Icon icon={icon} size="large" color="secondary" />
       <h3 className={styles.title}>{title}</h3>
-      <div>{description}</div>
+      {description && <div>{description}</div>}
     </a>
   )
 }
