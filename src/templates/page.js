@@ -5,13 +5,19 @@ import Container from "../components/container"
 import Hero from "../components/hero"
 import Layout from "../components/layout"
 import RichText from "../components/rich-text"
+import Testimonial from "../components/testimonial"
 
 class PageTemplate extends React.Component {
   render() {
     const page = get(this.props, "data.contentfulPage")
 
     return (
-      <Layout location={this.props.location} title={page.title} description={page.leadText.leadText} image={page.heroImage.url}>
+      <Layout
+        location={this.props.location}
+        title={page.title}
+        description={page.leadText.leadText}
+        image={page.heroImage.url}
+      >
         <Hero
           title={page.title}
           image={page.heroImage.url}
@@ -20,6 +26,13 @@ class PageTemplate extends React.Component {
         <Container size="75">
           <RichText content={page.content} />
         </Container>
+        {page.testimonial && (
+          <Testimonial
+            author={page.testimonial.author}
+            jobTitle={page.testimonial.jobTitle}
+            content={page.testimonial.review.childMarkdownRemark.html}
+          />
+        )}
       </Layout>
     )
   }
@@ -40,6 +53,15 @@ export const pageQuery = graphql`
       }
       content {
         raw
+      }
+      testimonial {
+        author
+        jobTitle
+        review {
+          childMarkdownRemark {
+            html
+          }
+        }
       }
     }
   }

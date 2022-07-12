@@ -12,7 +12,6 @@ class RootIndex extends React.Component {
     const page = get(this, "props.data.contentfulPage")
     const person = get(this, "props.data.contentfulPerson")
     const services = get(this, "props.data.allContentfulService.nodes")
-    const [testimonial] = get(this, "props.data.allContentfulTestimonial.nodes")
 
     return (
       <Layout
@@ -36,11 +35,13 @@ class RootIndex extends React.Component {
           title={person.name}
           content={person.bio.childMarkdownRemark.html}
         />
-        <Testimonial
-          author={testimonial.author}
-          jobTitle={testimonial.jobTitle}
-          content={testimonial.review.childMarkdownRemark.html}
-        />
+        {page.testimonial && (
+          <Testimonial
+            author={page.testimonial.author}
+            jobTitle={page.testimonial.jobTitle}
+            content={page.testimonial.review.childMarkdownRemark.html}
+          />
+        )}
       </Layout>
     )
   }
@@ -58,6 +59,15 @@ export const pageQuery = graphql`
       leadText {
         leadText
       }
+      testimonial {
+        author
+        jobTitle
+        review {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
     }
     contentfulPerson(name: { glob: "*Phoebe Pallotti*" }) {
       name
@@ -68,17 +78,6 @@ export const pageQuery = graphql`
       }
       profileImage {
         gatsbyImageData(aspectRatio: 1, width: 350, placeholder: BLURRED)
-      }
-    }
-    allContentfulTestimonial {
-      nodes {
-        author
-        jobTitle
-        review {
-          childMarkdownRemark {
-            html
-          }
-        }
       }
     }
     allContentfulService(limit: 4) {
