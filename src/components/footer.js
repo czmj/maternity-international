@@ -12,6 +12,7 @@ const Footer = () => (
         <div className={styles.contactItem}>
           <Icon color="secondary" icon="map-pin" />
           <address className={styles.contactDetails}>
+            Maternity International <br />
             38 Holberry Gardens, <br />
             Sheffield, <br />
             S10 2FR
