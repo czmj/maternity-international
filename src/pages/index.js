@@ -15,7 +15,12 @@ class RootIndex extends React.Component {
     const [testimonial] = get(this, "props.data.allContentfulTestimonial.nodes")
 
     return (
-      <Layout location={this.props.location} title={page.title} description={page.leadText.leadText} image={page.heroImage.url}>
+      <Layout
+        location={this.props.location}
+        title={page.title}
+        description={page.leadText.leadText}
+        image={page.heroImage.url}
+      >
         <Hero
           title={page.title}
           subheading={page.leadText.leadText}
@@ -54,7 +59,7 @@ export const pageQuery = graphql`
         leadText
       }
     }
-    contentfulPerson(name: { glob: "*Phoebe Pallotti" }) {
+    contentfulPerson(name: { glob: "*Phoebe Pallotti*" }) {
       name
       bio {
         childMarkdownRemark {
