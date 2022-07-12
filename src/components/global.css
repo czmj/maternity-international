@@ -120,6 +120,10 @@ address {
   padding-left: var(--space-md);
 }
 
+.bg-light-grey {
+  background-color: var(--light-grey);
+}
+
 @media (min-width: 780px) {
   .columns {
     display: grid;

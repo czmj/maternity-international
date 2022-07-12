@@ -5,14 +5,25 @@
 .rich-text h5, 
 .rich-text h6
 {
-  margin: var(--space-4xl) 0 var(--space-xl);
+  margin: var(--space-4xl) 0 var(--space-2xl);
+}
+
+.rich-text h1:first-child, 
+.rich-text h2:first-child, 
+.rich-text h3:first-child, 
+.rich-text h4:first-child, 
+.rich-text h5:first-child, 
+.rich-text h6:first-child {
+  margin-top: var(--space-2xl);
+}
+
+.rich-text h2 {
+  font-size: var(--text-subtitle);
 }
 
 .rich-text p,
-.rich-text ul,
-.rich-text ol {
-  margin-bottom: var(--size-gutter);
-
+.rich-text li {
+  margin-bottom: var(--space-xl);
 }
 
 .rich-text ul p,

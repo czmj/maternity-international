@@ -43,8 +43,14 @@ class WorkPage extends React.Component {
               )
             })}
           </ul>
-          {page.content && <RichText content={page.content} />}
         </Container>
+        {page.content && (
+          <div className="bg-light-grey">
+            <Container>
+              <RichText content={page.content} />
+            </Container>
+          </div>
+        )}
         {page.testimonial && (
           <Testimonial
             author={page.testimonial.author}
