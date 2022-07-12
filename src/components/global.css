@@ -104,6 +104,22 @@ address {
   background: var(--light-grey);
 }
 
+.links {
+  list-style: none;
+  padding: 0;
+  font-size: var(--text-lead);
+  font-weight: var(--bold);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.linkText {
+  padding-left: var(--space-md);
+}
+
 @media (min-width: 780px) {
   .columns {
     display: grid;

@@ -1,8 +1,9 @@
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import get from "lodash/get"
 import React from "react"
 import Container from "../components/container"
 import Hero from "../components/hero"
+import Icon from "../components/icon"
 import Layout from "../components/layout"
 import RichText from "../components/rich-text"
 import Testimonial from "../components/testimonial"
@@ -20,6 +21,19 @@ class ProjectTemplate extends React.Component {
         <Hero title={post.title} image={post.heroImage.url} />
         <Container size="75">
           <RichText content={post.content} />
+          <ul className="links">
+            {post.links &&
+              post.links.map(link => {
+                return (
+                  <li>
+                    <Link to={link.url} className="link">
+                      <Icon icon="link" />
+                      <span className="linkText">{link.text}</span>
+                    </Link>
+                  </li>
+                )
+              })}
+          </ul>
         </Container>
         {post.testimonial && (
           <Testimonial
@@ -45,6 +59,11 @@ export const pageQuery = graphql`
       }
       content {
         raw
+      }
+      links {
+        id
+        text
+        url
       }
       testimonial {
         author

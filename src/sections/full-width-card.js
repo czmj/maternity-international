@@ -41,14 +41,14 @@ const FullWidthCard = ({
             }}
           />
           {(links || media) && (
-            <ul className={styles.links}>
+            <ul className="links">
               {links &&
                 links.map(link => {
                   return (
                     <li>
-                      <Link to={link.url} className={styles.link}>
+                      <Link to={link.url} className="link">
                         <Icon icon="link" />
-                        <span className={styles.linkText}>{link.text}</span>
+                        <span className="linkText">{link.text}</span>
                       </Link>
                     </li>
                   )
