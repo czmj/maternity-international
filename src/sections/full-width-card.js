@@ -78,9 +78,9 @@ const FullWidthCard = ({
 
                   return (
                     <li>
-                      <a href={link.publicUrl} className={styles.link}>
+                      <a href={link.publicUrl} className="link">
                         <Icon icon={icon} />
-                        <span className={styles.linkText}>{link.title}</span>
+                        <span className="linkText">{link.title}</span>
                       </a>
                     </li>
                   )

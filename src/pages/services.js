@@ -4,6 +4,7 @@ import React from "react"
 import Container from "../components/container"
 import Hero from "../components/hero"
 import Layout from "../components/layout"
+import Testimonial from "../components/testimonial"
 import FullWidthCard from "../sections/full-width-card"
 
 class ServicesPage extends React.Component {
@@ -31,7 +32,7 @@ class ServicesPage extends React.Component {
                 <li
                   key={service.slug}
                   id={service.slug}
-                  className={index % 2 ? "light-grey" : ""}
+                  className={index % 2 ? "" : "light-grey"}
                 >
                   <Container>
                     <FullWidthCard
@@ -47,6 +48,13 @@ class ServicesPage extends React.Component {
               )
             })}
         </ul>
+        {page.testimonial && (
+          <Testimonial
+            author={page.testimonial.author}
+            jobTitle={page.testimonial.jobTitle}
+            content={page.testimonial.review.childMarkdownRemark.html}
+          />
+        )}
       </Layout>
     )
   }
@@ -63,6 +71,15 @@ export const servicesQuery = graphql`
       }
       leadText {
         leadText
+      }
+      testimonial {
+        author
+        jobTitle
+        review {
+          childMarkdownRemark {
+            html
+          }
+        }
       }
     }
     allContentfulService {
