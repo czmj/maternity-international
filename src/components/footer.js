@@ -46,7 +46,7 @@ const Footer = () => (
         </ul>
         <div className={styles.credit}>
           <p>
-            Built by Lyra Pallotti and{" "}
+            Built by Lyra the honey bludger and{" "}
             <a href="https://github.com/czmj">Clara Jordan</a>. Logo by{" "}
             <a href="https://thenounproject.com/icon/pregnancy-603874/">LAFS</a>
             .
